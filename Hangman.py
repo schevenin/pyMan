@@ -40,7 +40,7 @@ def main():
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     total_letters_found = 0
 
-    while player.mistakes < 7:
+    while player.mistakes < 8:
         guess = str(input("Guess a letter (Q to quit): "))
         if guess == "Q":
             break
@@ -71,7 +71,8 @@ def main():
             print("Remaining letters: ", alphabet.upper())
             print(censored_word)
 
-    print("The word was", secret_word)
+
+    print("\n\nThe word was", secret_word)
 
 
 if __name__ == "__main__":

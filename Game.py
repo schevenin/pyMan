@@ -34,14 +34,10 @@ class Game:
             5: '''\n |-------|\n O       |\n/|\      |\n |       |\n         |\n===========''',
             6: '''\n |-------|\n O       |\n/|\      |\n |       |\n/        |\n===========''',
             7: '''\n |-------|\n O       |\n/|\      |\n |       |\n/ \      |\n===========''',
+            8: '''\n |-------|\n X       |\n/|\      |\n |       |\n/ \      |\n==========='''
         }
-        if difficulty.lower() == "hard":
-            print(cases.get(mistakes))
-            if mistakes == 6:
-                print("Game Over.")
-        elif difficulty.lower() == "normal":
-            print(cases.get(mistakes))
-            if mistakes == 7:
-                print("Game Over.")
+        print(cases.get(mistakes))
+        if mistakes == 8:
+            print("Game Over.")
 
 

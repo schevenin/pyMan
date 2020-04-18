@@ -54,14 +54,14 @@ def main():
             letters_found = secret_word.count(guess)
             total_letters_found += letters_found
             dupIndex = list_duplicates_of(secret_word, guess)
-            if total_letters_found == len(secret_word):
-                print("You won!")
-                break
             for i in range(letters_found):
                 censored_word = replace_str_index(censored_word, dupIndex[i] * 2, guess)
             print("The word contains", guess)
             print("Remaining letters: ", alphabet.upper())
             print(censored_word)
+            if total_letters_found == len(secret_word):
+                print("\nYou won!")
+                break
         else:
             if player.difficulty == "hard":
                 player.mistakes += 2

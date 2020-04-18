@@ -11,11 +11,11 @@ def list_duplicates_of(seq,item):
     list_of_indexes = []
     while True:
         try:
-            list_of_indexes = seq.index(item, start+1)
+            index = seq.index(item, start+1)
         except ValueError:
             break
         else:
-            list_of_indexes.append(list_of_indexes)
+            list_of_indexes.append(index)
             start = list_of_indexes
     return list_of_indexes
 

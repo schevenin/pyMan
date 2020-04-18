@@ -35,7 +35,7 @@ def main():
         return
 
     player = Player(word_length.lower(), difficulty.lower(), 0)
-    secret_word = ''.join(e for e in game.getRandomWord(word_length.lower()) if e.isalnum())
+    secret_word = (''.join(e for e in game.getRandomWord(word_length.lower()) if e.isalnum())).lower()
     censored_word = "_ " * len(secret_word)
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     total_letters_found = 0

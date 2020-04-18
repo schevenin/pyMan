@@ -43,7 +43,7 @@ def main():
     while player.mistakes < 8:
         guess = str(input("Guess a letter (Q to quit): "))
         while not guess.isalpha() or len(guess) > 1:
-            guess = str(input("Please enter only a single letter (Q to quit): "))
+            guess = str(input("Please enter a single letter (Q to quit): "))
         if guess == "Q":
             break
         elif alphabet.count(guess) == 0:

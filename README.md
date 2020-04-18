@@ -16,7 +16,7 @@
 ##### install modules
 >pip install random_word
 
-##### run anagrams solver
+##### run hangman
 ###### make sure default python symlink is mapped to python3 (else use python3)
 >python Hangman.py
 

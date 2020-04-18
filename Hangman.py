@@ -68,16 +68,23 @@ def main():
             else:
                 player.mistakes += 1
             game.printHangman(player.mistakes, player.difficulty)
-            alphabet = alphabet.replace(guess, '')
             print("The word doesn't contain", guess)
-            print("Remaining letters: ", alphabet.upper())
-            print(censored_word)
+            if player.mistakes != 8:
+                alphabet = alphabet.replace(guess, '')
+                print("Remaining letters: ", alphabet.upper())
+                print(censored_word)
 
 
     print("\nThe word was", secret_word)
 
 
 if __name__ == "__main__":
-    main()
-
-
+    yes_choices = ["yes", "y", "yea", "yeah", "yessir", "yep", "yup"]
+    no_choices = ["no", "n", "nah", "nope", "no ma'am"]
+    play = str(input("Ready to play hangman? "))
+    while play in yes_choices:
+        main()
+        play = str(input("Play again? "))
+        if play in no_choices:
+            print("Goodbye!")
+            break

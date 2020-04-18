@@ -8,7 +8,7 @@
 >python -m venv env
 
 ##### activate virtual environment
->source env/bin/activate
+>source venv/bin/activate
 
 ##### verify
 >which python

@@ -16,7 +16,7 @@ def list_duplicates_of(seq,item):
             break
         else:
             list_of_indexes.append(index)
-            start = list_of_indexes
+            start = index
     return list_of_indexes
 
 

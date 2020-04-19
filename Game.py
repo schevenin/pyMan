@@ -2,15 +2,7 @@ from random_word import RandomWords
 
 
 class Game:
-
-    def printAlphabet(self, alphabet, removeChar):
-        if removeChar in alphabet:
-            remAlphabet = alphabet.lower().replace(removeChar.lower(), '')
-            return remAlphabet.upper()
-        return alphabet.upper()
-
-
-    def getRandomWord(self, length):
+    def get_random_word(self, length):
         r = RandomWords()
         if length == "long":
             maxLength = 10
@@ -24,7 +16,7 @@ class Game:
         word = r.get_random_word(hasDictionaryDef="True", minLength=minLength, maxLength=maxLength)
         return word
 
-    def printHangman(self, mistakes, difficulty):
+    def print_hangman(self, mistakes, difficulty):
         cases = {
             0: '''\n |-------|\n         |\n         |\n         |\n         |\n===========''',
             1: '''\n |-------|\n O       |\n         |\n         |\n         |\n===========''',

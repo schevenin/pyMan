@@ -6,7 +6,7 @@ def replace_str_index(text, index=0, replacement=''):
     return '%s%s%s' % (text[:index], replacement, text[index+1:])
 
 
-def list_duplicates_of(seq,item):
+def list_duplicates_of(seq, item):
     start = -1
     list_of_indexes = []
     while True:
@@ -35,7 +35,7 @@ def main():
         return
 
     player = Player(word_length.lower(), difficulty.lower(), 0)
-    secret_word = (''.join(e for e in game.getRandomWord(word_length.lower()) if e.isalnum())).lower()
+    secret_word = (''.join(e for e in game.get_random_word(word_length.lower()) if e.isalnum())).lower()
     censored_word = "_ " * len(secret_word)
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     total_letters_found = 0
@@ -49,7 +49,7 @@ def main():
         elif alphabet.count(guess) == 0:
             print("You already tried", guess)
         elif guess in secret_word:
-            game.printHangman(player.mistakes, player.difficulty)
+            game.print_hangman(player.mistakes, player.difficulty)
             alphabet = alphabet.replace(guess, '')
             letters_found = secret_word.count(guess)
             total_letters_found += letters_found
@@ -67,7 +67,7 @@ def main():
                 player.mistakes += 2
             else:
                 player.mistakes += 1
-            game.printHangman(player.mistakes, player.difficulty)
+            game.print_hangman(player.mistakes, player.difficulty)
             print("The word doesn't contain", guess)
             if player.mistakes != 8:
                 alphabet = alphabet.replace(guess, '')
